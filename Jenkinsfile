@@ -1,6 +1,9 @@
 pipeline {
     agent any
-    options { buildDiscarder(logRotator(numToKeepStr: '10')) }
+    options { 
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps() 
+    }
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven"
